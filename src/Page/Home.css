@@ -1,0 +1,40 @@
+* {
+    background-color: black;
+}
+
+.image {
+    display: flex;
+    width: 100%;
+
+}
+
+.photo {
+    width: 100%;
+}
+
+
+.title {
+    color: white;
+    font-size: 75px;
+    margin-left: 100px;
+    font: small-caps bold 24px/1
+   
+}
+
+.top {
+display: flex;
+justify-content: space-between;
+height: 250px;
+width: 100%;
+}
+
+.stanley {
+    height:100px ;
+    padding-top: 10px;
+}
+
+
+.down {
+    height: 250px;
+    width: 100%;
+}
