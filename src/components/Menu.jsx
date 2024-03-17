@@ -10,10 +10,10 @@ function NavBar () {
           <a className="menu-item" href="/">
             🏒 - Accueil
           </a>
-          <a className="menu-item" href="/destination">
+          <a className="menu-item" href="/statparequipe">
             📊 - Statistique par équipe
           </a>
-          <a className="menu-item" href="/login">
+          <a className="menu-item" href="/classement">
              💹- Classement NHL
           </a>
         </Menu>
