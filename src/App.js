@@ -1,51 +1,31 @@
 import './App.css';
-import axios from 'axios';
 import React, { useState } from 'react';
-import {  useEffect } from "react";
-import instance from './service/instance';
+import { useEffect } from "react";
 
 function App() {
 
-   const [joueurswash , setJoueurswash] = useState("");
+   const [city, getSkatersByCity] = useState();
+   const [skaters, setSkaters] = useState();
 
-
-  const getEmployee = () => {
-    // Send the request
-     fetch('http://localhost:4000' ,  {method: 'GET',
-     headers: {
-       'Accept': 'application/json',
-       'Content-Type': 'application/json',       
-     }})
-      // Use this data to update the state
-      .then((response) => response.json() )
-      .then((responseJson) => {
-        console.log(responseJson);
-        // setJoueurswash(response.data.skaters);
-      });
-  };
-
-
-  const [joueurs, setJoueurs] = useState([]);
 
   useEffect(() => {
-    instance
-      .get(`/skatersWASHINGTON`)
-      .then((result) => {
-        console.log(result);
-        setJoueurs(result);
+    if( city !== undefined ){
+      fetch('http://localhost:4000/skaters/city/'+city)
+      .then(response => response.json())
+      .then(data => {
+        //console.log(data);
+        setSkaters(data);
       })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, []);
+    }
+  },[city, getSkatersByCity])
 
 
   return (
     <div className="App">
       <header className="App-header">
        <h1>NHL</h1>
-       <button type="button" onClick={getEmployee}>Get Data</button>
-       
+       <button type="button" onClick={() => getSkatersByCity('TORONTO')}>Get Data for TORONTO</button>
+       <pre>{JSON.stringify(skaters, null, 4)}</pre>
       </header>
     </div>
   );
