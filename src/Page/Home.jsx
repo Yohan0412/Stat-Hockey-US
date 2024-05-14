@@ -28,7 +28,7 @@ function Home() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      
         <div className="top">
         <NavBar />
         <h1 className="title">Stat'Hockey</h1>
@@ -40,8 +40,7 @@ function Home() {
 
        </div>
        </div>
-       <button onClick={getEmployee}/>
-       </header>
+       
     </div>
   );
 }

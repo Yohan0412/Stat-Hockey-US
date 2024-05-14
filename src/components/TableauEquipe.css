@@ -1,0 +1,27 @@
+body {
+    background-color: black;
+}
+
+.tb {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+th {
+    color: white;
+    border: 1px solid;
+    height: 70px;
+    width: 80px;
+    
+}
+
+td {
+    color: white;
+    border: 1px solid;
+}
+
+.photoJ {
+    height: 70px;
+    width: 80px;
+}

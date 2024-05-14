@@ -6,10 +6,8 @@ function App() {
 
 
 return (
-    <div className="App">
-      <header className="App-header">
-     <Routeur />
-      </header>
+    <div className="App"> 
+     <Routeur /> 
     </div>
   );
 }
