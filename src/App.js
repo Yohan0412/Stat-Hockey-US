@@ -1,32 +1,51 @@
-
+import './App.css';
+import axios from 'axios';
 import React, { useState } from 'react';
 import {  useEffect } from "react";
-import Routeur from './Routeur/Routeur';
-
+import instance from './service/instance';
 
 function App() {
 
-  const [city, getSkatersByCity] = useState();
-  const [skaters, setSkaters] = useState();
+   const [joueurswash , setJoueurswash] = useState("");
 
+
+  const getEmployee = () => {
+    // Send the request
+     fetch('http://localhost:4000' ,  {method: 'GET',
+     headers: {
+       'Accept': 'application/json',
+       'Content-Type': 'application/json',       
+     }})
+      // Use this data to update the state
+      .then((response) => response.json() )
+      .then((responseJson) => {
+        console.log(responseJson);
+        // setJoueurswash(response.data.skaters);
+      });
+  };
+
+
+  const [joueurs, setJoueurs] = useState([]);
 
   useEffect(() => {
-    if( city !== undefined ){
-      fetch('http://localhost:4000/skaters/city/'+city)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        setSkaters(data);
+    instance
+      .get(`/skatersWASHINGTON`)
+      .then((result) => {
+        console.log(result);
+        setJoueurs(result);
       })
-    }
-  },[city, getSkatersByCity])
-
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
 
 
 return (
     <div className="App">
       <header className="App-header">
-       <Routeur /> 
+       <h1>NHL</h1>
+       <button type="button" onClick={getEmployee}>Get Data</button>
+       
       </header>
     </div>
   );
