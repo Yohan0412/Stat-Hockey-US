@@ -77,8 +77,6 @@ useEffect((e) => {
         <td>{player.penaltyMinutes}</td>
         <td>{player.shots}</td>
         <td><img className="photoJ"src={player.headshot}></img></td>
-        
-
     </tr>
   ))}
     </div>
