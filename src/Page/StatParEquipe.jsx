@@ -3,6 +3,8 @@ import "./statparequipe.css";
 import React from 'react';
 import { useState, useEffect } from "react";
 import TableauEquipe from "../components/TableauEquipe";
+import TableauEquipeDetail from "../components/TableauEquipeDetail";
+
 
 function StatParEquipe() {
 
@@ -52,6 +54,11 @@ useEffect((e) => {
 <h1>{city}</h1>
 
 { active ? <TableauEquipe data={skaters}/> : ""  }
+
+
+<h1>Statistique plus en détail</h1>
+
+{active ? <TableauEquipeDetail data={skaters} /> : ""}
 
     </div>
 

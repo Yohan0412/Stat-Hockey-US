@@ -1,29 +1,7 @@
 import "./Home.css";
-import React, { useState } from 'react';
 import NavBar from "../components/Menu";
 
 function Home() {
-
-
-    const [joueurswash , setJoueurswash] = useState("");
-
-
-    const getEmployee = () => {
-      // Send the request
-       fetch('http://localhost:4000' ,  {method: 'GET',
-       headers: {
-         'Accept': 'application/json',
-         'Content-Type': 'application/json',       
-       }})
-        // Use this data to update the state
-        .then((response) => response.json() )
-        .then((responseJson) => {
-          console.log(responseJson);
-          // setJoueurswash(response.data.skaters);
-        });
-    };
-  
-
 
 
   return (

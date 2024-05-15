@@ -10,8 +10,8 @@ function NavBar () {
           <a className="menu-item" href="/">
             🏒 - Accueil
           </a>
-          <a className="menu-item" href="/statparequipe">
-            📊 - Statistique par équipe
+          <a className="menu-item" href="/statjoueursparequipe">
+            📊 - Statistique des joueurs par équipes
           </a>
           <a className="menu-item" href="/classement">
              💹- Classement NHL
